@@ -394,7 +394,7 @@ cur.fetchall()
 
 
 
-From the above query we can see that `articles.author` refer to IDS, not to the actual names of the *authors*
+From the above query we can see that `articles.author` refer to authors IDs, not to the actual name of the *authors*
 
 
 ```python
@@ -663,6 +663,10 @@ with open('data.txt', 'w') as f:
 
 
 - #### Install [Vagrant](https://www.vagrantup.com/) and [VirtualBox.](https://www.virtualbox.org/wiki/Downloads)
+
+- #### Windows user?
+
+   It's probably a more adequate choice to try out the [Windows PowerShell](https://docs.microsoft.com/pt-br/powershell/scripting/setup/installing-windows-powershell?view=powershell-6) instead of the usual Windows Command Prompt. Alternatively you can use [Git Bash](https://git-scm.com/downloads) as recommended by Udacity or any other Shell Prompt for Windows of your choice.
 
 - #### Clone the repository to your local machine:
 
