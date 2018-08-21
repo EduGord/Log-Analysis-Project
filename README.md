@@ -640,8 +640,8 @@ query_3
 
 ```python
 questions = ["What are the most popular three articles of all time?",
-            "Who are the most popular article authors of all time?",
-            "Who are the most popular article authors of all time?"]
+             "Who are the most popular article authors of all time?",
+             "Who are the most popular article authors of all time?"]
 
 queries = [query_1, query_2, query_3]
 ```
@@ -652,7 +652,8 @@ queries = [query_1, query_2, query_3]
 
 with open('data.txt', 'w') as f:
     for i, question in enumerate(questions):
-        f.write(question + '\n\n' + '\n'.join(map(str,queries[i])) + '\n\n')
+        f.write(question + '\n\n' + '\n'.join(map(str, queries[i])) + '\n\n')
+  
 ```
 
 
