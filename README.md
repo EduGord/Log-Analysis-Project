@@ -37,7 +37,6 @@ Here are the questions the reporting tool should answer.
 
 ```python
 import psycopg2
-import json
 ```
 
 
@@ -612,7 +611,7 @@ cur.fetchall()
 
 
 ```python
-# Days errors were throwed bore than 1% of the total requests
+# Days errors were throwed more than 1% of the total requests
 
 cur.execute("SELECT err.date as date, ROUND(100.0 * err.nerr / total.req, 2) AS percentage \
 FROM (SELECT date(time) as date, count(*) as nerr \
