@@ -22,7 +22,7 @@ The data used to build this project can be found [here.](https://d17h27t6h515a5.
 
 ## So what are we reporting, anyway?
 
-Here are the questions the reporting tool should answer. The example answers given aren't the right ones, though!
+Here are the questions the reporting tool should answer.
 
 **1. What are the most popular three articles of all time?** Which articles have been accessed the most? Present this information as a sorted list with the most popular article at the top.
 
