@@ -39,7 +39,7 @@ LIMIT 3;")
 
 query_1 = cur.fetchall()
 
-# Retrieving the most popular authors by 
+# Retrieving the most popular authors by
 # the total number of views of each author articles
 
 cur.execute("SELECT authors.name, SUM(views) AS views \
@@ -56,7 +56,7 @@ query_2 = cur.fetchall()
 # Days errors were throwed more than 1% of the total requests
 
 cur.execute("SELECT err.date AS date, ROUND(100.0 * err.nerr / total.req, 2) \
-	AS percentage \
+    AS percentage \
 FROM (SELECT date(time) AS date, count(*) AS nerr \
     FROM log \
     WHERE status != '200 OK' \
@@ -79,18 +79,19 @@ queries = [query_1, query_2, query_3]
 
 # Writting a file containing the questions and the answers
 
-labels = {0: ["Article Name","Views"], 
-		  1: ["Author Name","Views"],
-		  2: ["Date","Errors Over Total Requests"]}
+labels = {0: ["Article Name", "Views"],
+          1: ["Author Name", "Views"],
+          2: ["Date", "Errors Over Total Requests"]}
 
 with open('data.txt', 'w') as f:
     for i, question in enumerate(questions):
-        f.write("\nQuestion {index}: {question}\n\n".format(index = i + 1, 
-        	question = questions[i]))
+        f.write("\nQuestion {index}: {question}\n\n".format(index=i+1,
+                question=questions[i]))
         for j, query in enumerate(queries[i]):
             f.write("\t{label_1}: {info_1}\n\t{label_2}: {info_2}\
-{conditional_percentage}\n\n".format(label_1 = labels[i][0],
-	info_1 = queries[i][j][0],
-    label_2 = labels[i][1],
-    info_2 = queries[i][j][1],
-    conditional_percentage = "%" if i == 2 else ""))
+{conditional_percentage}\n\n".format(label_1=labels[i][0],
+                                     info_1=queries[i][j][0],
+                                     label_2=labels[i][1],
+                                     info_2=queries[i][j][1],
+                                     conditional_percentage="%" if i == 2
+                                     else ""))
